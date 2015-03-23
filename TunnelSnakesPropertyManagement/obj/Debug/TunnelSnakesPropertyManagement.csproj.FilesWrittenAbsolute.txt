@@ -1,0 +1,8 @@
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/bin/Debug/TunnelSnakesPropertyManagement.dll.mdb
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/bin/Debug/TunnelSnakesPropertyManagement.dll
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/obj/Debug/TunnelSnakesPropertyManagement.dll
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/obj/Debug/TunnelSnakesPropertyManagement.dll.mdb
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/bin/Debug/Xamarin.Forms.Core.dll
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/bin/Debug/Xamarin.Forms.Xaml.dll
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/bin/Debug/SQLite.Net.dll

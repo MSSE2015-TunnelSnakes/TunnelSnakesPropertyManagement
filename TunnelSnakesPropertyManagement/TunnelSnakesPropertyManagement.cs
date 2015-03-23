@@ -1,11 +1,13 @@
 ﻿using System;
-
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace TunnelSnakesPropertyManagement
 {
 	public class App : Application
 	{
+		static DatabaseHelper database;
+
 		public App ()
 		{
 			// The root page of your application
@@ -15,7 +17,7 @@ namespace TunnelSnakesPropertyManagement
 					Children = {
 						new Label {
 							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
+							Text = "The Tunnle Snakes Present... PROPERTY MANAGEMENT 2015!!!"
 						}
 					}
 				}
@@ -25,6 +27,28 @@ namespace TunnelSnakesPropertyManagement
 		protected override void OnStart ()
 		{
 			// Handle when your app starts
+			Debug.WriteLine ("The application has started");
+
+			Property testProp = new Property ();
+			testProp.Address = "123 ABC Street";
+			testProp.Capacity = 3;
+			testProp.City = "Minneapolis";
+			testProp.Zip = "55410";
+
+			Database.SaveProperty (testProp);
+			var properties = Database.GetProperties ().GetEnumerator ();
+
+			int count = 0;
+			do
+			{
+				Property current = properties.Current;
+				if (current != null ) {
+					count++;
+				}
+			} while (properties.MoveNext());
+
+
+			Debug.WriteLine ("Current Properties: " + count);
 		}
 
 		protected override void OnSleep ()
@@ -35,6 +59,15 @@ namespace TunnelSnakesPropertyManagement
 		protected override void OnResume ()
 		{
 			// Handle when your app resumes
+		}
+
+		public static DatabaseHelper Database {
+			get { 
+				if (database == null) {
+					database = new DatabaseHelper ();
+				}
+				return database; 
+			}
 		}
 	}
 }
