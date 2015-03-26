@@ -7,18 +7,28 @@ namespace TunnelSnakesPropertyManagement
 	public class App : Application
 	{
 		static DatabaseHelper database;
+		Label debugLabel;
+
 
 		public App ()
 		{
+			debugLabel = new Label () {
+				Text = "in progress..",
+				XAlign = TextAlignment.Center
+			};
+
 			// The root page of your application
 			MainPage = new ContentPage {
+
+
 				Content = new StackLayout {
 					VerticalOptions = LayoutOptions.Center,
 					Children = {
 						new Label {
 							XAlign = TextAlignment.Center,
 							Text = "The Tunnle Snakes Present... PROPERTY MANAGEMENT 2015!!!"
-						}
+						}, 
+						debugLabel
 					}
 				}
 			};
@@ -47,8 +57,8 @@ namespace TunnelSnakesPropertyManagement
 				}
 			} while (properties.MoveNext());
 
-
-                          			Debug.WriteLine ("Current Properties: " + count);
+			Debug.WriteLine ("Current Properties: " + count);
+			debugLabel.Text = "Current Properties: " + count;
 		}
 
 		protected override void OnSleep ()
