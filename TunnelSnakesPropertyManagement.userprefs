@@ -1,20 +1,21 @@
 ﻿<Properties StartupItem="iOS/TunnelSnakesPropertyManagement.iOS.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPad2.8.2" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.2" />
   <MonoDevelop.Ide.Workbench ActiveDocument="iOS/SQLite_iOS.cs">
     <Files>
-      <File FileName="TunnelSnakesPropertyManagement/Database/DatabaseHelper.cs" Line="2" Column="15" />
-      <File FileName="TunnelSnakesPropertyManagement/Models/Property.cs" Line="1" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/Models/Tenant.cs" Line="1" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/ISQLite.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement/Database/DatabaseHelper.cs" Line="1" Column="1" />
       <File FileName="TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs" Line="1" Column="1" />
-      <File FileName="Droid/SQLite_Android.cs" Line="16" Column="10" />
-      <File FileName="iOS/SQLite_iOS.cs" Line="14" Column="4" />
-      <File FileName="../Todo/PCL/Todo/Data/TodoItemDatabase.cs" Line="28" Column="3" />
-      <File FileName="../Todo/PCL/Todo/ISQLite.cs" Line="6" Column="24" />
+      <File FileName="../Todo/PCL/Todo/Data/TodoItemDatabase.cs" Line="27" Column="4" />
+      <File FileName="iOS/SQLite_iOS.cs" Line="22" Column="35" />
+      <File FileName="Droid/MainActivity.cs" Line="11" Column="11" />
+      <File FileName="Droid/SQLite_Android.cs" Line="21" Column="72" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs" line="51" column="1" />
+      <Breakpoint file="/Users/kevin/Projects/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs" line="30" column="1" />
+      <Breakpoint file="/Users/kevin/Projects/TunnelSnakesPropertyManagement/iOS/SQLite_iOS.cs" line="21" column="52" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

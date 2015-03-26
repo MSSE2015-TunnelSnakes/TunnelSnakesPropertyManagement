@@ -7,7 +7,7 @@
 /Users/kevin/Projects/TunnelSnakesPropertyManagement/Droid/obj/Debug/res/drawable-hdpi/icon.png
 /Users/kevin/Projects/TunnelSnakesPropertyManagement/Droid/obj/Debug/res/drawable-xhdpi/icon.png
 /Users/kevin/Projects/TunnelSnakesPropertyManagement/Droid/obj/Debug/res/drawable-xxhdpi/icon.png
-/Users/kevin/Projects/TunnelSnakesPropertyManagement/Droid/obj/Debug/res/raw/propertymanagment.db3
+/Users/kevin/Projects/TunnelSnakesPropertyManagement/Droid/obj/Debug/res/raw/propertymanagement.db3
 /Users/kevin/Projects/TunnelSnakesPropertyManagement/Droid/obj/Debug/R.cs.flag
 /Users/kevin/Projects/TunnelSnakesPropertyManagement/Droid/bin/Debug/TunnelSnakesPropertyManagement.Droid-Signed.apk
 /Users/kevin/Projects/TunnelSnakesPropertyManagement/Droid/obj/Debug/uploadflags.txt

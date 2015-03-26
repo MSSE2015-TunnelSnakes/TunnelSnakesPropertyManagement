@@ -48,7 +48,7 @@ namespace TunnelSnakesPropertyManagement
 			} while (properties.MoveNext());
 
 
-			Debug.WriteLine ("Current Properties: " + count);
+                          			Debug.WriteLine ("Current Properties: " + count);
 		}
 
 		protected override void OnSleep ()
