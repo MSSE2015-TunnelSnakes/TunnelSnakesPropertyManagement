@@ -7,16 +7,13 @@ namespace TunnelSnakesPropertyManagement
 	{
 		[PrimaryKey, AutoIncrement]
 		public int tenant_id { get; set; }
+		public int address_id { get; set; }
+		public int property_id { get; set; }
 		public string first_name { get; set; }
 		public string last_name { get; set; }
 		public string phone_home { get; set; }
 		public string phone_cell { get; set; }
 		public string email { get; set; }
-		public string address_line_1 { get; set; }
-		public string address_line_2 { get; set; }
-		public string city { get; set; }
-		public string state { get; set; }
-		public string zip { get; set; }
 		public string least_start_date { get; set; }
 		public string least_end_date { get; set; }
 

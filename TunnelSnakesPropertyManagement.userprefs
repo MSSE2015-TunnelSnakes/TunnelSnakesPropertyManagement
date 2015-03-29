@@ -1,20 +1,24 @@
 ﻿<Properties StartupItem="Droid/TunnelSnakesPropertyManagement.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.AVD_for_Nexus_4_by_Google" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TunnelSnakesPropertyManagement/Models/Payment.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.56.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TunnelSnakesPropertyManagement\Database\DatabaseHelper.cs">
     <Files>
-      <File FileName="TunnelSnakesPropertyManagement/Database/DatabaseHelper.cs" Line="23" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs" Line="11" Column="3" />
-      <File FileName="../Todo/PCL/Todo/Data/TodoItemDatabase.cs" Line="1" Column="1" />
-      <File FileName="iOS/SQLite_iOS.cs" Line="8" Column="1" />
-      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="Droid/SQLite_Android.cs" Line="20" Column="4" />
-      <File FileName="TunnelSnakesPropertyManagement/Models/Property.cs" Line="15" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/Models/Tenant.cs" Line="6" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/Models/Payment.cs" Line="11" Column="40" />
+      <File FileName="TunnelSnakesPropertyManagement\Database\DatabaseHelper.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\TunnelSnakesPropertyManagement.cs" Line="38" Column="38" />
+      <File FileName="iOS\SQLite_iOS.cs" Line="1" Column="1" />
+      <File FileName="Droid\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="Droid\SQLite_Android.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\Models\Property.cs" Line="21" Column="21" />
+      <File FileName="TunnelSnakesPropertyManagement\Models\Tenant.cs" Line="41" Column="41" />
+      <File FileName="TunnelSnakesPropertyManagement\Models\Payment.cs" Line="37" Column="37" />
+      <File FileName="TunnelSnakesPropertyManagement\Models\Address.cs" Line="17" Column="17" />
+      <File FileName="TunnelSnakesPropertyManagement\Models\Message.cs" Line="37" Column="37" />
+      <File FileName="TunnelSnakesPropertyManagement\Models\WorkRequest.cs" Line="22" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\TunnelSnakesPropertyManagement\TunnelSnakesPropertyManagement.cs" line="42" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

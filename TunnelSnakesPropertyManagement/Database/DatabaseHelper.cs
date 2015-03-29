@@ -24,12 +24,44 @@ namespace TunnelSnakesPropertyManagement
 			// create the tables
 			database.CreateTable<Tenant>();
 			database.CreateTable<Property>();
+			database.CreateTable<WorkRequest>();
+			database.CreateTable<Address>();
+			database.CreateTable<Payment>();
+			database.CreateTable<Message>();
+		}
+
+		///
+		/// Address
+		/// 
+		public Address GetAddress (int id) 
+		{
+			lock (locker) {
+				return database.Table<Address>().FirstOrDefault(x => x.address_id == id);
+			}
+		}
+
+		public int SaveAddress (Address address) 
+		{
+			lock (locker) {
+				if (address.address_id != 0) {
+					database.Update(address);
+					return address.address_id;
+				} else {
+					return database.Insert(address);
+				}
+			}
+		}
+
+		public int DeleteAddress(int id)
+		{
+			lock (locker) {
+				return database.Delete<Address>(id);
+			}
 		}
 
 		///
 		/// Property 
 		///
-
 
 		/// <summary>
 		/// Gets the properties.
@@ -52,16 +84,16 @@ namespace TunnelSnakesPropertyManagement
 		public Property GetProperty (int id) 
 		{
 			lock (locker) {
-				return database.Table<Property>().FirstOrDefault(x => x.Id == id);
+				return database.Table<Property>().FirstOrDefault(x => x.address_id == id);
 			}
 		}
 
 		public int SaveProperty (Property property) 
 		{
 			lock (locker) {
-				if (property.Id != 0) {
+				if (property.address_id != 0) {
 					database.Update(property);
-					return property.Id;
+					return property.address_id;
 				} else {
 					return database.Insert(property);
 				}
@@ -74,13 +106,35 @@ namespace TunnelSnakesPropertyManagement
 				return database.Delete<Property>(id);
 			}
 		}
-
-
-
+			
 		///
 		/// Tenant
 		/// 
+		public Tenant GetTenant (int id) 
+		{
+			lock (locker) {
+				return database.Table<Tenant>().FirstOrDefault(x => x.tenant_id == id);
+			}
+		}
 
+		public int SaveTenant (Tenant tenant) 
+		{
+			lock (locker) {
+				if (tenant.tenant_id != 0) {
+					database.Update(tenant);
+					return tenant.tenant_id;
+				} else {
+					return database.Insert(tenant);
+				}
+			}
+		}
+
+		public int DeleteTenant(int id)
+		{
+			lock (locker) {
+				return database.Delete<Tenant>(id);
+			}
+		}
 
 	}
 }

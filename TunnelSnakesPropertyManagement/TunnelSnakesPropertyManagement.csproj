@@ -37,6 +37,9 @@
     <Compile Include="Models\Property.cs" />
     <Compile Include="ISQLite.cs" />
     <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\WorkRequest.cs" />
+    <Compile Include="Models\Message.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.1.6296\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.1.6296\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
