@@ -12,6 +12,7 @@ C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\bin\De
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\bin\Debug\Xamarin.Forms.Platform.Android.dll
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\bin\Debug\Xamarin.Forms.Xaml.dll
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\bin\Debug\TunnelSnakesPropertyManagement.pdb
+C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\bin\Debug\TunnelSnakesPropertyManagement.dll.mdb
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\bin\Debug\Xamarin.Forms.Core.xml
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\obj\Debug\TunnelSnakesPropertyManagement.Droid.csprojResolveAssemblyReference.cache
@@ -25,4 +26,3 @@ C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\obj\De
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\obj\Debug\res\raw\tspm.db3
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\obj\Debug\R.cs.flag
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\obj\Debug\uploadflags.txt
-C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\Droid\bin\Debug\TunnelSnakesPropertyManagement.dll.mdb

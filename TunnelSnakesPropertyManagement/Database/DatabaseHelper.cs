@@ -117,6 +117,13 @@ namespace TunnelSnakesPropertyManagement
 			}
 		}
 
+		public IEnumerable<Tenant> GetAllTenants ()
+		{
+			lock (locker) {
+				return (from i in database.Table<Tenant>() select i).ToList();
+			}
+		}
+
 		public int SaveTenant (Tenant tenant) 
 		{
 			lock (locker) {

@@ -7,11 +7,12 @@ namespace TunnelSnakesPropertyManagement
 	public class App : Application
 	{
 		static DatabaseHelper database;
-		Label debugLabel;
+		//Label debugLabel;
 
 
 		public App ()
 		{
+			/*
 			debugLabel = new Label () {
 				Text = "in progress..",
 				XAlign = TextAlignment.Center
@@ -32,6 +33,10 @@ namespace TunnelSnakesPropertyManagement
 					}
 				}
 			};
+			*/
+
+			var mainNav = new NavigationPage (new HomePage ());
+			MainPage = mainNav;
 		}
 
 		protected override void OnStart ()
@@ -52,7 +57,11 @@ namespace TunnelSnakesPropertyManagement
 			} while (properties.MoveNext());
 
 			Debug.WriteLine ("Current Properties: " + count);
-			debugLabel.Text = "Current Properties: " + count;
+		//	debugLabel.Text = "Current Properties: " + count;
+
+
+			var homePage = new HomePage ();
+			MainPage.Navigation.PushAsync (homePage, false);
 		}
 
 		protected override void OnSleep ()
@@ -113,8 +122,6 @@ namespace TunnelSnakesPropertyManagement
 			tenant1.least_end_date = "4/1/2016";
 
 			int tenant1Id = Database.SaveTenant (tenant1);
-
-
 		}
 	}
 }
