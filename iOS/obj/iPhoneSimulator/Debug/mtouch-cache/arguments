@@ -1,6 +1,6 @@
-# Version: 8.8.0.2 (ccfcd59)
+# Version: 8.8.1.9 (7e1f69e)
 # [first argument, ignore] # /Users/kevin/Projects/TunnelSnakesPropertyManagement/iOS/mtouch.exe
-/Library/Frameworks/Xamarin.iOS.framework/Versions/8.8.0.2/bin/mtouch-64 \
+/Library/Frameworks/Xamarin.iOS.framework/Versions/8.8.1.9/bin/mtouch-64 \
 	--cache \
 	/Users/kevin/Projects/TunnelSnakesPropertyManagement/iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
 	--sim \
