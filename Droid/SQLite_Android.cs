@@ -17,7 +17,6 @@ namespace TunnelSnakesPropertyManagement.Droid
 		#region ISQLite implementation
 		public SQLite.Net.SQLiteConnection GetConnection ()
 		{
-			var rawPath = System.Environment.GetFolderPath(Environment.SpecialFolder.Resources);
 			var sqliteFilename = "TSPM.db3";
 			string documentsPath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal); // Documents folder
 			var path = Path.Combine(documentsPath, sqliteFilename);

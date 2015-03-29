@@ -1,13 +1,16 @@
 ﻿<Properties StartupItem="Droid/TunnelSnakesPropertyManagement.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPad2.8.2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.AVD_for_Nexus_4_by_Google" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TunnelSnakesPropertyManagement/Models/Payment.cs">
     <Files>
-      <File FileName="TunnelSnakesPropertyManagement/Database/DatabaseHelper.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement/Database/DatabaseHelper.cs" Line="23" Column="1" />
       <File FileName="TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs" Line="11" Column="3" />
       <File FileName="../Todo/PCL/Todo/Data/TodoItemDatabase.cs" Line="1" Column="1" />
-      <File FileName="iOS/SQLite_iOS.cs" Line="1" Column="1" />
+      <File FileName="iOS/SQLite_iOS.cs" Line="8" Column="1" />
       <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="Droid/SQLite_Android.cs" Line="1" Column="1" />
+      <File FileName="Droid/SQLite_Android.cs" Line="20" Column="4" />
+      <File FileName="TunnelSnakesPropertyManagement/Models/Property.cs" Line="15" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement/Models/Tenant.cs" Line="6" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement/Models/Payment.cs" Line="11" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
