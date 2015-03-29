@@ -6,14 +6,15 @@ namespace TunnelSnakesPropertyManagement
 	public class Property
 	{
 		[PrimaryKey, AutoIncrement]
-		public int Id { get; set; }
-		public string Address { get; set; }
-		public string City { get; set; }
-		public string State { get; set; }
-		public string Zip { get; set; }
-		public int Capacity { get; set; }
-		public bool Owned { get; set; }
-		public bool Occupied { get; set; }
+		public int proerty_id { get; set; }
+		public string address_line_1 { get; set; }
+		public string address_line_2 { get; set; }
+		public string city { get; set; }
+		public string state { get; set; }
+		public string zip { get; set; }
+		public int num_bedrooms { get; set; }
+		public bool num_bathrooms { get; set; }
+		public bool can_mix_tenants { get; set; }
 
 		public Property ()
 		{
