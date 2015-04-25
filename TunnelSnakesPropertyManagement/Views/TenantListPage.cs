@@ -1,6 +1,5 @@
 ﻿using System;
 using Xamarin.Forms;
-using System.Collections;
 using System.Collections.Generic;
 
 
@@ -66,7 +65,8 @@ namespace TunnelSnakesPropertyManagement
 			};
 			addNewTenant.Clicked += (sender, args) =>
 			{
-				addNewTenant.Text = String.Format("To Do");
+				AddEditTenantPage addEditTenantPage = new AddEditTenantPage();
+				this.Navigation.PushAsync(addEditTenantPage);
 			};
 				
 			layout.Children.Add(addNewTenant);

@@ -68,7 +68,4 @@ Global
 		{D39E139F-C89E-45D8-9C62-2B48FCA181EA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{D39E139F-C89E-45D8-9C62-2B48FCA181EA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Droid\TunnelSnakesPropertyManagement.Droid.csproj
-	EndGlobalSection
 EndGlobal

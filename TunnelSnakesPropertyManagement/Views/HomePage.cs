@@ -18,10 +18,17 @@ namespace TunnelSnakesPropertyManagement
 			//				var todoPage = new TodoItemPage();
 			//				Navigation.PushAsync(todoPage);
 			//			};
+
+			/*
 			Label homeLabel = new Label {
-				Text = "Home"
+				Text = "Home",
+				FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+				FontAttributes = FontAttributes.Bold
 			};
+
+
 			layout.Children.Add (homeLabel);
+			*/
 
 			Button manageTenants = new Button
 			{
@@ -74,4 +81,3 @@ namespace TunnelSnakesPropertyManagement
 		}
 	}
 }
-
