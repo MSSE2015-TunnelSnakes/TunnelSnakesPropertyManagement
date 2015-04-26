@@ -13,28 +13,20 @@ namespace TunnelSnakesPropertyManagement
 		public TenantListPage ()
 		{
 			//InitializeComponent ();
-			Title = "Tenants";
+			Title = "Manage Tenants";
 
 			var layout = new StackLayout();
-
-			//listView.ItemSelected += (sender, e) => {
-			//				var todoPage = new TodoItemPage();
-			//				Navigation.PushAsync(todoPage);
-			//			};
-			Label homeLabel = new Label {
-				Text = "Manage Tenants"
-			};
-			layout.Children.Add (homeLabel);
-
 
 			// Tenants 
 			listView = new ListView ();
 			listView.ItemTemplate = new DataTemplate (typeof (TenantListCell));
-			DatabaseHelper helper = new DatabaseHelper();
-			List<Tenant> tenants = new List<Tenant> ();
-		//	ArrayList<Tenant> tenants = (ArrayList<Tenant>) helper.GetAllTenants();
-			this.BindingContext = helper.GetAllTenants();
-		//	TunnelSnakesPropertyManagment.Database.getAllTenants();
+			DatabaseHelper dbHelper = new DatabaseHelper();
+			List<Tenant> tenants = (List<Tenant>) dbHelper.GetAllTenants();
+
+			listView.ItemsSource = tenants;
+			listView.ItemTemplate = new DataTemplate(typeof(TenantListCell));
+			//listView.ItemTemplate.SetBinding(TextCell.TextProperty, "last_name");
+
 			listView.ItemSelected += (sender, e) => {
 				var tenant = (Tenant)e.SelectedItem;
 				//var todoPage = new TodoItemPage();

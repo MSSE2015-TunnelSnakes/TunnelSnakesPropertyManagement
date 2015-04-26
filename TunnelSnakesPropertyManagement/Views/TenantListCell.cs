@@ -10,12 +10,12 @@ namespace TunnelSnakesPropertyManagement
 			var firstNameLabel = new Label {
 				YAlign = TextAlignment.Center
 			};
-			firstNameLabel.SetBinding (Label.TextProperty, "firstName");
+			firstNameLabel.SetBinding (Label.TextProperty, "first_name");
 
 			var lastNameLabel = new Label {
 				YAlign = TextAlignment.Center
 			};
-			lastNameLabel.SetBinding (Label.TextProperty, "lastName");
+			lastNameLabel.SetBinding (Label.TextProperty, "last_name");
 
 			var layout = new StackLayout {
 				Padding = new Thickness(20, 0, 0, 0),

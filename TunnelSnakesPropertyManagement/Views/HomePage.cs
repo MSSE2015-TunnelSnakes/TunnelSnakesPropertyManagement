@@ -10,25 +10,8 @@ namespace TunnelSnakesPropertyManagement
 		{
 			//InitializeComponent ();
 			Title = "Home";
-			int count = 0;
 
 			var layout = new StackLayout();
-
-			//listView.ItemSelected += (sender, e) => {
-			//				var todoPage = new TodoItemPage();
-			//				Navigation.PushAsync(todoPage);
-			//			};
-
-			/*
-			Label homeLabel = new Label {
-				Text = "Home",
-				FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-				FontAttributes = FontAttributes.Bold
-			};
-
-
-			layout.Children.Add (homeLabel);
-			*/
 
 			Button manageTenants = new Button
 			{
@@ -40,7 +23,7 @@ namespace TunnelSnakesPropertyManagement
 				this.Navigation.PushAsync(tenantListPage);
 			};
 
-
+			var count = 0;
 
 			Button viewPayments = new Button
 			{
@@ -75,6 +58,30 @@ namespace TunnelSnakesPropertyManagement
 			layout.Children.Add(viewPayments);
 			layout.Children.Add(manageProperties);
 			layout.Children.Add(messageTenants);
+
+			// START DEBUG
+			/*
+			Button debugBtn = new Button
+			{
+				Text = String.Format("Inject Contact")
+			};
+			debugBtn.Clicked += (sender, args) =>
+			{
+				DatabaseHelper dbHelper = new DatabaseHelper();
+				Tenant tenant = new Tenant();
+				tenant.first_name = "John";
+				tenant.last_name = "User";
+				tenant.phone_home = "123-555-2342";
+				tenant.phone_cell = "123-555-3541";
+				tenant.email = "JohnUser@Hotmail.com";
+				tenant.least_start_date = "4/1/2015";
+				tenant.least_end_date = "4/1/2016";
+				dbHelper.SaveTenant(tenant);
+				debugBtn.Text = String.Format("Contact Injected");
+			};
+			layout.Children.Add (debugBtn);
+			*/
+			// END DEBUG
 
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;
