@@ -21,13 +21,13 @@ namespace TunnelSnakesPropertyManagement
 			};
 
 			var lastName = new Entry { Placeholder = "Last Name", StyleId = "UserId" };
-			firstName.SetBinding (Entry.TextProperty, "last_name");
+			lastName.SetBinding (Entry.TextProperty, "last_name");
 
 			var homePhoneLabel = new Label {
 				Text = "Home Phone"
 			};
 			var homePhone = new Entry { Placeholder = "Home Phone", StyleId = "UserId" };
-			lastName.SetBinding (Entry.TextProperty, "phone_home");
+			homePhone.SetBinding (Entry.TextProperty, "phone_home");
 
 
 			var cellPhoneLabel = new Label {
@@ -64,6 +64,15 @@ namespace TunnelSnakesPropertyManagement
 				// todo
 			};
 
+			var deleteButton = new Button { Text = "Delete" };
+			deleteButton.Clicked  += (sender, args) =>
+			{
+				DatabaseHelper dbHelper = new DatabaseHelper();
+				var tenant = BindingContext as Tenant;
+				dbHelper.DeleteTenant(tenant.tenant_id);
+				Navigation.PopAsync();
+			};
+
 			var grid = new Grid () {
 				HorizontalOptions = LayoutOptions.CenterAndExpand
 			};
@@ -86,7 +95,7 @@ namespace TunnelSnakesPropertyManagement
 			Content = new StackLayout () {
 				VerticalOptions = LayoutOptions.Center,
 				Padding = new Thickness (30),
-				Children = { grid,  editButton }
+				Children = { grid,  editButton , deleteButton}
 			};
 
 		}

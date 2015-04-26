@@ -3,6 +3,7 @@ using SQLite.Net;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace TunnelSnakesPropertyManagement
 {
@@ -117,10 +118,17 @@ namespace TunnelSnakesPropertyManagement
 			}
 		}
 
-		public IEnumerable<Tenant> GetAllTenants ()
+
+		// This is terrrrrrible - FIX
+		public ObservableCollection<Tenant> GetAllTenants ()
 		{
 			lock (locker) {
-				return (from i in database.Table<Tenant>() select i).ToList();
+				ObservableCollection<Tenant> tenants = new ObservableCollection<Tenant> ();
+				IEnumerable<Tenant> tenantList = (from i in database.Table<Tenant>() select i).ToList();
+				foreach (Tenant t in tenantList) {
+					tenants.Add(t);
+				}
+				return tenants;
 			}
 		}
 

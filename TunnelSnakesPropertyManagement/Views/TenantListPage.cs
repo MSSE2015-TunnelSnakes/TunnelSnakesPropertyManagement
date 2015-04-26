@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 
 namespace TunnelSnakesPropertyManagement
@@ -21,7 +22,8 @@ namespace TunnelSnakesPropertyManagement
 			listView = new ListView ();
 			listView.ItemTemplate = new DataTemplate (typeof (TenantListCell));
 			DatabaseHelper dbHelper = new DatabaseHelper();
-			List<Tenant> tenants = (List<Tenant>) dbHelper.GetAllTenants();
+			var tenants = (ObservableCollection<Tenant>) dbHelper.GetAllTenants();
+
 
 			listView.ItemsSource = tenants;
 			listView.ItemTemplate = new DataTemplate(typeof(TenantListCell));
@@ -29,13 +31,13 @@ namespace TunnelSnakesPropertyManagement
 
 			listView.ItemSelected += (sender, e) => {
 				var tenant = (Tenant)e.SelectedItem;
-				//var todoPage = new TodoItemPage();
-				//todoPage.BindingContext = todoItem;
+				var addEditTenantPage = new AddEditTenantPage();
+				addEditTenantPage.BindingContext = tenant;
 
 			//	((App)App.Current).ResumeAtTodoId = tenant.tenant_id;
 				//Debug.WriteLine("setting ResumeAtTodoId = " + todoItem.ID);
 
-			//	Navigation.PushAsync(todoPage);
+				Navigation.PushAsync(addEditTenantPage);
 			};
 
 			layout.Children.Add(listView);
@@ -66,7 +68,11 @@ namespace TunnelSnakesPropertyManagement
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;
 
-		} 
+		}
+	protected override void OnElementChanged(ElementChangedEventArgs<ListView> e)
+	{
+		base.OnElementChanged(e);
+	}
 	}
 }
 
