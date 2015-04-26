@@ -67,12 +67,7 @@ namespace TunnelSnakesPropertyManagement
 
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;
-
 		}
-	protected override void OnElementChanged(ElementChangedEventArgs<ListView> e)
-	{
-		base.OnElementChanged(e);
-	}
 	}
 }
 

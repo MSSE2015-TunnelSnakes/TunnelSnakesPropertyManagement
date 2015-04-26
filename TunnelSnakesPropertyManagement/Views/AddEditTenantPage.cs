@@ -5,8 +5,12 @@ namespace TunnelSnakesPropertyManagement
 {
 	public class AddEditTenantPage : ContentPage
 	{
+		Button deleteButton;
+		Tenant tenant = null;
+
 		public AddEditTenantPage ()
 		{
+
 			Title = "Tenent";
 
 			var firstNameLabel = new Label {
@@ -58,17 +62,30 @@ namespace TunnelSnakesPropertyManagement
 
 			//BindingContext = Model;
 
-			var editButton = new Button { Text = "Save" };
-			editButton.Clicked  += (sender, args) =>
+			var saveButton = new Button { Text = "Save" };
+			saveButton.Clicked  += (sender, args) =>
 			{
-				// todo
+				if (tenant == null) {
+					tenant = new Tenant();
+				}
+
+				tenant.first_name = firstName.Text;
+				tenant.last_name = lastName.Text;
+				tenant.phone_home = homePhone.Text;
+				tenant.phone_cell = cellPhone.Text;
+				tenant.email = email.Text;
+				tenant.least_start_date = leaseStartDate.Text;
+				tenant.least_end_date = leaseEndDate.Text;
+
+				DatabaseHelper dbHelper = new DatabaseHelper();
+				dbHelper.SaveTenant(tenant);
+				Navigation.PopAsync();
 			};
 
-			var deleteButton = new Button { Text = "Delete" };
+			deleteButton = new Button { Text = "Delete" };
 			deleteButton.Clicked  += (sender, args) =>
 			{
 				DatabaseHelper dbHelper = new DatabaseHelper();
-				var tenant = BindingContext as Tenant;
 				dbHelper.DeleteTenant(tenant.tenant_id);
 				Navigation.PopAsync();
 			};
@@ -95,11 +112,21 @@ namespace TunnelSnakesPropertyManagement
 			Content = new StackLayout () {
 				VerticalOptions = LayoutOptions.Center,
 				Padding = new Thickness (30),
-				Children = { grid,  editButton , deleteButton}
+				Children = { grid,  saveButton , deleteButton}
 			};
-
 		}
 
+		protected override void OnAppearing()
+		{            
+			base.OnAppearing();
+
+			tenant = BindingContext as Tenant;
+			if (tenant == null || tenant.tenant_id <= 0) {
+				if (deleteButton != null) {
+					deleteButton.IsVisible = false;
+				}
+			}
+		}
 	}
 }
 
