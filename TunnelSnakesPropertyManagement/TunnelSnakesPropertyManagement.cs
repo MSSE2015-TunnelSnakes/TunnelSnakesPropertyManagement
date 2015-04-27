@@ -7,59 +7,16 @@ namespace TunnelSnakesPropertyManagement
 	public class App : Application
 	{
 		static DatabaseHelper database;
-		//Label debugLabel;
-
 
 		public App ()
 		{
-			/*
-			debugLabel = new Label () {
-				Text = "in progress..",
-				XAlign = TextAlignment.Center
-			};
-
-			// The root page of your application
-			MainPage = new ContentPage {
-
-
-				Content = new StackLayout {
-					VerticalOptions = LayoutOptions.Center,
-					Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "The Tunnle Snakes Present... PROPERTY MANAGEMENT 2015!!!"
-						}, 
-						debugLabel
-					}
-				}
-			};
-			*/
-
 			var mainNav = new NavigationPage (new HomePage ());
 			MainPage = mainNav;
 		}
 
 		protected override void OnStart ()
 		{
-			// Handle when your app starts
-			Debug.WriteLine ("The application has started");
-
-			createDemoData ();
-			var properties = Database.GetProperties ().GetEnumerator ();
-
-			int count = 0;
-			do
-			{
-				Property current = properties.Current;
-				if (current != null ) {
-					count++;
-				}
-			} while (properties.MoveNext());
-
-			Debug.WriteLine ("Current Properties: " + count);
-		//	debugLabel.Text = "Current Properties: " + count;
-
-
+			// createDemoData ();
 			var homePage = new HomePage ();
 			MainPage.Navigation.PushAsync (homePage, false);
 		}

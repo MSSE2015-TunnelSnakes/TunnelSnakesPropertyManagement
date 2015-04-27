@@ -3,12 +3,12 @@ using Xamarin.Forms;
 
 namespace TunnelSnakesPropertyManagement
 {
-	public class AddEditTenantPage : ContentPage
+	public class TenantPage : ContentPage
 	{
 		Button deleteButton;
 		Tenant tenant = null;
 
-		public AddEditTenantPage ()
+		public TenantPage ()
 		{
 
 			Title = "Tenent";

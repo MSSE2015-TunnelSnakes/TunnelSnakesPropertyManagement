@@ -31,13 +31,13 @@ namespace TunnelSnakesPropertyManagement
 
 			listView.ItemSelected += (sender, e) => {
 				var tenant = (Tenant)e.SelectedItem;
-				var addEditTenantPage = new AddEditTenantPage();
-				addEditTenantPage.BindingContext = tenant;
+				var tenantPage = new TenantPage();
+				tenantPage.BindingContext = tenant;
 
 			//	((App)App.Current).ResumeAtTodoId = tenant.tenant_id;
 				//Debug.WriteLine("setting ResumeAtTodoId = " + todoItem.ID);
 
-				Navigation.PushAsync(addEditTenantPage);
+				Navigation.PushAsync(tenantPage);
 			};
 
 			layout.Children.Add(listView);
@@ -59,7 +59,7 @@ namespace TunnelSnakesPropertyManagement
 			};
 			addNewTenant.Clicked += (sender, args) =>
 			{
-				AddEditTenantPage addEditTenantPage = new AddEditTenantPage();
+				TenantPage addEditTenantPage = new TenantPage();
 				this.Navigation.PushAsync(addEditTenantPage);
 			};
 				
@@ -67,6 +67,12 @@ namespace TunnelSnakesPropertyManagement
 
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;
+		}
+
+		protected override void OnAppearing()
+		{            
+			base.OnAppearing ();
+
 		}
 	}
 }

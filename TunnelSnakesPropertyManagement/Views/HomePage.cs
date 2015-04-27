@@ -10,6 +10,7 @@ namespace TunnelSnakesPropertyManagement
 		{
 			//InitializeComponent ();
 			Title = "Home";
+			Icon = "trogdor.png";
 
 			var layout = new StackLayout();
 
