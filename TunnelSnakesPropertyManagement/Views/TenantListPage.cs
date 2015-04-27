@@ -15,7 +15,11 @@ namespace TunnelSnakesPropertyManagement
 		{
 			//InitializeComponent ();
 			Title = "Manage Tenants";
+			PopulateListView ();
 
+		}
+
+		private void PopulateListView() {
 			var layout = new StackLayout();
 
 			// Tenants 
@@ -34,7 +38,7 @@ namespace TunnelSnakesPropertyManagement
 				var tenantPage = new TenantPage();
 				tenantPage.BindingContext = tenant;
 
-			//	((App)App.Current).ResumeAtTodoId = tenant.tenant_id;
+				//	((App)App.Current).ResumeAtTodoId = tenant.tenant_id;
 				//Debug.WriteLine("setting ResumeAtTodoId = " + todoItem.ID);
 
 				Navigation.PushAsync(tenantPage);
@@ -62,7 +66,7 @@ namespace TunnelSnakesPropertyManagement
 				TenantPage addEditTenantPage = new TenantPage();
 				this.Navigation.PushAsync(addEditTenantPage);
 			};
-				
+
 			layout.Children.Add(addNewTenant);
 
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
@@ -72,7 +76,7 @@ namespace TunnelSnakesPropertyManagement
 		protected override void OnAppearing()
 		{            
 			base.OnAppearing ();
-
+			PopulateListView ();
 		}
 	}
 }
