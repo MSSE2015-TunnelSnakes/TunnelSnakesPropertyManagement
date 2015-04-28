@@ -42,7 +42,9 @@ namespace TunnelSnakesPropertyManagement
 			};
 			manageProperties.Clicked += (sender, args) =>
 			{
-				manageProperties.Text = String.Format("{0} click{1}!", count, count == 1 ? "" : "s");
+				PropertyListPage propertyListPage = new PropertyListPage();
+				this.Navigation.PushAsync(propertyListPage);
+
 			};
 
 

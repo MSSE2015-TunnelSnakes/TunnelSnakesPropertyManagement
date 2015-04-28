@@ -63,8 +63,8 @@ namespace TunnelSnakesPropertyManagement
 			};
 			addNewTenant.Clicked += (sender, args) =>
 			{
-				TenantPage addEditTenantPage = new TenantPage();
-				this.Navigation.PushAsync(addEditTenantPage);
+				TenantPage tenantPage = new TenantPage();
+				this.Navigation.PushAsync(tenantPage);
 			};
 
 			layout.Children.Add(addNewTenant);

@@ -92,7 +92,7 @@ namespace TunnelSnakesPropertyManagement
 		public int SaveProperty (Property property) 
 		{
 			lock (locker) {
-				if (property.address_id != 0) {
+				if (property.property_id != 0) {
 					database.Update(property);
 					return property.address_id;
 				} else {
