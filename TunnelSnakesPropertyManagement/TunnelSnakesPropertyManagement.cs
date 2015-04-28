@@ -16,7 +16,7 @@ namespace TunnelSnakesPropertyManagement
 
 		protected override void OnStart ()
 		{
-			createDemoData ();
+			// createDemoData ();
 			var homePage = new HomePage ();
 			MainPage.Navigation.PushAsync (homePage, false);
 		}
@@ -78,8 +78,7 @@ namespace TunnelSnakesPropertyManagement
 			tenant1.least_start_date = "4/1/2015";
 			tenant1.least_end_date = "4/1/2016";
 
-			int tenantId = Database.SaveTenant (tenant1);
+			int tenant1Id = Database.SaveTenant (tenant1);
 		}
 	}
 }
-

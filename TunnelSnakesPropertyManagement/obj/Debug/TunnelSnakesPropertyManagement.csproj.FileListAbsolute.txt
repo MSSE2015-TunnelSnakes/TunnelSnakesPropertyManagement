@@ -8,3 +8,13 @@ C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\TunnelSnakes
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\TunnelSnakesPropertyManagement\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\TunnelSnakesPropertyManagement\obj\Debug\TunnelSnakesPropertyManagement.dll
 C:\Users\kpichelman\Documents\GitHub\TunnelSnakesPropertyManagement\TunnelSnakesPropertyManagement\obj\Debug\TunnelSnakesPropertyManagement.pdb
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\obj\Debug\TunnelSnakesPropertyManagement.csprojResolveAssemblyReference.cache
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\obj\Debug\TunnelSnakesPropertyManagement.dll
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\obj\Debug\TunnelSnakesPropertyManagement.pdb
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\bin\Debug\TunnelSnakesPropertyManagement.dll
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\bin\Debug\TunnelSnakesPropertyManagement.pdb
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\bin\Debug\SQLite.Net.dll
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\Stan\Documents\MSSE2015-TunnelSnakes\TunnelSnakesPropertyManagement.git\TunnelSnakesPropertyManagement\bin\Debug\Xamarin.Forms.Xaml.xml

@@ -11,7 +11,7 @@ namespace TunnelSnakesPropertyManagement
 		public TenantPage ()
 		{
 
-			Title = "Tenent";
+			Title = "Tenant";
 
 			var firstNameLabel = new Label {
 				Text = "First Name"
