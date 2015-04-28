@@ -1,12 +1,9 @@
-﻿<Properties StartupItem="Droid/TunnelSnakesPropertyManagement.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.133d6536" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs">
+﻿<Properties StartupItem="Droid\TunnelSnakesPropertyManagement.Droid.csproj" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.TA431073BR" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\Program Files (x86)\MSBuild\Xamarin\Android\Xamarin.Android.Common.targets">
     <Files>
-      <File FileName="TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs" Line="17" Column="25" />
-      <File FileName="TunnelSnakesPropertyManagement/Views/HomePage.cs" Line="13" Column="4" />
-      <File FileName="TunnelSnakesPropertyManagement/Views/TenantPage.cs" Line="119" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/Views/TenantListPage.cs" Line="75" Column="4" />
-      <File FileName="TunnelSnakesPropertyManagement/Database/DatabaseHelper.cs" Line="129" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\Views\HomePage.cs" Line="53" Column="47" />
+      <File FileName="..\..\..\..\..\Program Files (x86)\MSBuild\Xamarin\Android\Xamarin.Android.Common.targets" Line="253" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
