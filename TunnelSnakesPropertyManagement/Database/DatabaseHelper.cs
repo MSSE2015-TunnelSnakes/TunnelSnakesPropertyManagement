@@ -22,6 +22,7 @@ namespace TunnelSnakesPropertyManagement
 		public DatabaseHelper ()
 		{
 			database = DependencyService.Get<ISQLite> ().GetConnection ();
+			//database.StoreDateTimeAsTicks = true;
 			// create the tables
 			database.CreateTable<Tenant>();
 			database.CreateTable<Property>();
@@ -151,6 +152,37 @@ namespace TunnelSnakesPropertyManagement
 			}
 		}
 
+
+		public IEnumerable<Payment> GetPayments (DateTime? after, DateTime? before) //, bool isPaid)
+		{
+			lock (locker) {
+				return (from x in database.Table<Payment>() where
+					(after == null || x.due_date >= after)
+					&& (before == null || x.due_date <= before)
+//					&& ((isPaid && x.amount_paid >= x.amount_due)
+//						|| (!isPaid && x.amount_paid < x.amount_due))
+					select x).ToList();
+			}
+		}
+
+		public int SavePayment (Payment payment) 
+		{
+			lock (locker) {
+				if (payment.tenant_id != 0) {
+					database.Update(payment);
+					return payment.payment_id;
+				} else {
+					return database.Insert(payment);
+				}
+			}
+		}
+
+		public int DeletePayment(int id)
+		{
+			lock (locker) {
+				return database.Delete<Payment>(id);
+			}
+		}
 	}
 }
 

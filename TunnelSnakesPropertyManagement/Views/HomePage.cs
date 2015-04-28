@@ -33,7 +33,9 @@ namespace TunnelSnakesPropertyManagement
 			};
 			viewPayments.Clicked += (sender, args) =>
 			{
-				viewPayments.Text = String.Format("{0} click{1}!", count, count == 1 ? "" : "s");
+				//viewPayments.Text = String.Format("{0} click{1}!", count, count == 1 ? "" : "s");
+				PaymentListPage paymentListPage = new PaymentListPage();
+				this.Navigation.PushAsync(paymentListPage);
 			};
 
 
