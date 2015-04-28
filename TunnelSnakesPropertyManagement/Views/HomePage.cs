@@ -8,6 +8,7 @@ namespace TunnelSnakesPropertyManagement
 	{
 		public HomePage ()
 		{
+			NavigationPage.SetHasBackButton (this, false);
 			//InitializeComponent ();
 			Title = "Home";
 			Icon = "trogdor.png";
