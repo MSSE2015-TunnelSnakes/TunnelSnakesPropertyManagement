@@ -9,18 +9,23 @@ namespace TunnelSnakesPropertyManagement
 	{
 		Button deleteButton;
 		Payment payment = null;
+		Dictionary<string, int> properties;
+		Dictionary<string, int> tenants;
+		Picker property;
+		Picker tenant;
 
 		public PaymentPage ()
 		{
 			var db = new DatabaseHelper ();
 			Title = "Payment";
+			var isExisting = payment != null && payment.payment_id != null && payment.payment_id > 0;
 
 			var addresses = db.GetAddresses ().ToDictionary (x => x.address_id, y => y.address_id + ". " + y.address_line_1 + " " + y.address_line_2);
 			if (!addresses.Any ())
 				throw new ArgumentException ("can't make a payment without an address");
 			
 			var props = db.GetProperties ();
-			var properties = new Dictionary<string, int> ();
+			properties = new Dictionary<string, int> ();
 			foreach(var prop in props)
 			{
 				if (!properties.ContainsKey (addresses [prop.address_id]))
@@ -30,7 +35,7 @@ namespace TunnelSnakesPropertyManagement
 			if (!properties.Any ())
 				throw new ArgumentException ("can't make a payment without a property");
 			
-			var property = new Picker { Title = "Property", VerticalOptions = LayoutOptions.Start };
+			property = new Picker { Title = "Property", VerticalOptions = LayoutOptions.Start };
 
 			foreach (string address in properties.Keys)
 			{
@@ -44,11 +49,11 @@ namespace TunnelSnakesPropertyManagement
 				propertyId = properties[addressLine];
 			};
 
-			var tenants = db.GetAllTenants ().ToDictionary (x => x.tenant_id + ". " + x.first_name + " " + x.last_name, x => x.tenant_id);
+			tenants = db.GetAllTenants ().ToDictionary (x => x.tenant_id + ". " + x.first_name + " " + x.last_name, x => x.tenant_id);
 			if(!tenants.Any()) 
 				throw new ArgumentException ("can't make a payment without a tenant");
 
-			var tenant = new Picker { Title = "Tenant", VerticalOptions = LayoutOptions.Start };
+			tenant = new Picker { Title = "Tenant", VerticalOptions = LayoutOptions.Start };
 
 			foreach (string t in tenants.Keys)
 			{
@@ -67,18 +72,21 @@ namespace TunnelSnakesPropertyManagement
 				Format = "D",
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
+			dueDate.SetBinding (DatePicker.DateProperty, "due_date");
 
 			Entry amountDue = new Entry
 			{
 				Placeholder = "Amount Due",
 				VerticalOptions = LayoutOptions.Start
 			};
+			amountDue.SetBinding (Entry.TextProperty, "amount_due");
 
 			Entry amountPaid = new Entry
 			{
 				Placeholder = "Amount Paid",
 				VerticalOptions = LayoutOptions.Start
 			};
+			amountPaid.SetBinding (Entry.TextProperty, "amount_paid");
 
 			var saveButton = new Button { Text = "Save" };
 			saveButton.Clicked  += (sender, args) =>
@@ -122,16 +130,28 @@ namespace TunnelSnakesPropertyManagement
 				}
 			};
 		}
+		 
 
 		protected override void OnAppearing()
 		{            
 			base.OnAppearing();
 
 			payment = BindingContext as Payment;
+			var isExisting = true;
 			if (payment == null || payment.payment_id <= 0) {
 				if (deleteButton != null) {
 					deleteButton.IsVisible = false;
 				}
+				isExisting = false;
+			}
+
+			if (isExisting) {
+				var addressString = properties.First (x => x.Value == payment.property_id).Key;
+				property.SelectedIndex = property.Items.IndexOf (addressString);
+			}
+
+			if (isExisting) {
+				tenant.SelectedIndex = tenant.Items.IndexOf (tenants.First (x => x.Value == payment.tenant_id).Key); 
 			}
 		}
 	}
