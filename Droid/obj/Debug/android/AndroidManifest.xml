@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="TunnelSnakesPropertyManagement.Droid">
   <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19" />
   <application android:label="Property Managment" android:name="mono.android.app.Application" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="TunnelSnakesPropertyManagement.Droid" android:name="tunnelsnakespropertymanagement.droid.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="TunnelSnakesPropertyManagement.Droid" android:name="md5ccca71b963d325ab60f4ebb2ba21441f.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
