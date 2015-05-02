@@ -24,12 +24,31 @@ namespace TunnelSnakesPropertyManagement
 			database = DependencyService.Get<ISQLite> ().GetConnection ();
 			//database.StoreDateTimeAsTicks = true;
 			// create the tables
-			database.CreateTable<Tenant>();
-			database.CreateTable<Property>();
-			database.CreateTable<WorkRequest>();
-			database.CreateTable<Address>();
-			database.CreateTable<Payment>();
-			database.CreateTable<Message>();
+			try {
+				database.CreateTable<Tenant>();
+				database.CreateTable<Property>();
+				database.CreateTable<WorkRequest>();
+				database.CreateTable<Address>();
+				database.CreateTable<Payment>();
+				database.CreateTable<Message>();
+			} catch (Exception ex) {
+				// Add error catching.  This could prompt the user that database is
+				//  corrupt and needs to be rebuilt or something.
+			}
+		}
+
+		// Scary!
+		public void DropTables() {
+			try {
+				database.DropTable<Tenant>();
+				database.DropTable<Property>();
+				database.DropTable<WorkRequest>();
+				database.DropTable<Address>();
+				database.DropTable<Payment>();
+				database.DropTable<Message>();
+			} catch (Exception ex) {
+				
+			}
 		}
 
 		///
@@ -82,6 +101,8 @@ namespace TunnelSnakesPropertyManagement
 				return database.Query<Property>("SELECT * FROM [Property] WHERE [Owned] = 1 AND [Occupied] = 0");
 			}
 		}
+
+
 
 		public Property GetProperty (int id) 
 		{

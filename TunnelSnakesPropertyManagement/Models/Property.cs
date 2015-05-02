@@ -16,5 +16,10 @@ namespace TunnelSnakesPropertyManagement
 		{
 		}
 	}
+
+	public class PropertyAddress : Property
+	{
+		public Address address { get; set; }
+	}
 }
 

@@ -60,34 +60,21 @@ namespace TunnelSnakesPropertyManagement
 				messageTenants.Text = String.Format("{0} click{1}!", count, count == 1 ? "" : "s");
 			};
 
+			Button settings = new Button
+			{
+				Text = String.Format("Settings")
+			};
+			settings.Clicked += (sender, args) =>
+			{
+				SettingsPage settingsPage = new SettingsPage();
+				this.Navigation.PushAsync(settingsPage);
+			};
+
 			layout.Children.Add(manageTenants);
 			layout.Children.Add(viewPayments);
 			layout.Children.Add(manageProperties);
 			layout.Children.Add(messageTenants);
-
-			// START DEBUG
-			/*
-			Button debugBtn = new Button
-			{
-				Text = String.Format("Inject Contact")
-			};
-			debugBtn.Clicked += (sender, args) =>
-			{
-				DatabaseHelper dbHelper = new DatabaseHelper();
-				Tenant tenant = new Tenant();
-				tenant.first_name = "John";
-				tenant.last_name = "User";
-				tenant.phone_home = "123-555-2342";
-				tenant.phone_cell = "123-555-3541";
-				tenant.email = "JohnUser@Hotmail.com";
-				tenant.least_start_date = "4/1/2015";
-				tenant.least_end_date = "4/1/2016";
-				dbHelper.SaveTenant(tenant);
-				debugBtn.Text = String.Format("Contact Injected");
-			};
-			layout.Children.Add (debugBtn);
-			*/
-			// END DEBUG
+			layout.Children.Add(settings);
 
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;
