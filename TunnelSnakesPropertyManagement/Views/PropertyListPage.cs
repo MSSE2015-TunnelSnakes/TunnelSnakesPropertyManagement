@@ -26,7 +26,7 @@ namespace TunnelSnakesPropertyManagement
 			listView = new ListView ();
 			listView.ItemTemplate = new DataTemplate (typeof (PropertyListCell));
 			DatabaseHelper dbHelper = new DatabaseHelper();
-			var properties  = dbHelper.GetProperties();
+			var properties = dbHelper.GetPropertyAddresses ();
 
 
 			listView.ItemsSource = properties;

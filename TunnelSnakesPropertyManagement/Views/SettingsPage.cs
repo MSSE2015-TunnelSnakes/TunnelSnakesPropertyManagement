@@ -18,7 +18,7 @@ namespace TunnelSnakesPropertyManagement
 			populateDataButton = new Button { Text = "Populate Data" };
 			populateDataButton.Clicked  += async(sender, args) =>
 			{
-				var answer = await DisplayAlert ("Populate Data?", "Inject data?", "Yes", "No");
+				var answer = await DisplayAlert ("Populate Data?", "Inject Demo Data into Database?", "Yes", "No");
 				if (answer) {
 					createDemoData();
 					DisplayAlert ("Data Populate", "Data Populated", "OK");
@@ -34,7 +34,7 @@ namespace TunnelSnakesPropertyManagement
 				if (answer) {
 					DatabaseHelper dbHelper = new DatabaseHelper();
 					dbHelper.DropTables();
-					//await Navigation.PopAsync();
+					DisplayAlert ("Data Delete", "All Data Deleted", "OK");
 				}
 					
 			};
@@ -91,7 +91,7 @@ namespace TunnelSnakesPropertyManagement
 			tenant1.least_start_date = "4/1/2015";
 			tenant1.least_end_date = "4/1/2016";
 
-			int tenant1Id = dbHelper.SaveTenant (tenant1);
+			dbHelper.SaveTenant (tenant1);
 
 			Tenant tenant2 = new Tenant();
 			tenant1.property_id = prop1Id;
@@ -104,7 +104,7 @@ namespace TunnelSnakesPropertyManagement
 			tenant2.least_start_date = "4/1/2015";
 			tenant2.least_end_date = "4/1/2016";
 
-			int tenant2Id = dbHelper.SaveTenant (tenant2);
+			dbHelper.SaveTenant (tenant2);
 		}
 	}
 }

@@ -7,16 +7,36 @@ namespace TunnelSnakesPropertyManagement
 	{
 		public PropertyListCell ()
 		{
-			var addressLabel = new Label {
-				YAlign = TextAlignment.Center
+			var address1Label = new Label {
+				YAlign = TextAlignment.Center,
 			};
-			addressLabel.SetBinding (Label.TextProperty, "property_id");
+			address1Label.SetBinding (Label.TextProperty, "address.address_line_1");
+
+			var address2Label = new Label {
+				YAlign = TextAlignment.Center,
+			};
+			address2Label.SetBinding (Label.TextProperty, "address.address_line_2");
+
+			var cityLable = new Label {
+				YAlign = TextAlignment.Center,
+			};
+			cityLable.SetBinding (Label.TextProperty, "address.city");
+
+			var stateLabel = new Label {
+				YAlign = TextAlignment.Center,
+			};
+			stateLabel.SetBinding (Label.TextProperty, "address.state");
+
+			var zipLable = new Label {
+				YAlign = TextAlignment.Center,
+			};
+			zipLable.SetBinding (Label.TextProperty, "address.zip");
 
 			var layout = new StackLayout {
 				Padding = new Thickness(20, 0, 0, 0),
-				Orientation = StackOrientation.Horizontal,
+				Orientation = StackOrientation.Vertical,
 				HorizontalOptions = LayoutOptions.StartAndExpand,
-				Children = {addressLabel}
+				Children = {address1Label, address2Label,  cityLable, stateLabel, zipLable}
 			};
 			View = layout;
 		}

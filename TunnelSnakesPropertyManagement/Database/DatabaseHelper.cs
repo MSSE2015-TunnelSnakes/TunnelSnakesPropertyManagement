@@ -95,6 +95,41 @@ namespace TunnelSnakesPropertyManagement
 			}
 		}
 
+		public List<PropertyAddress> GetPropertyAddresses() {
+			List<PropertyAddress> propertyAddresses = new List<PropertyAddress> ();
+
+			lock (locker) {
+				IEnumerable<Property> properties = GetProperties ();
+
+				foreach (Property p in properties) {
+					Address a = GetAddress (p.address_id);
+					//  Not allowed?
+					//PropertyAddress propAdd = (PropertyAddress)p;
+					PropertyAddress prop = new PropertyAddress();
+					prop.address_id = p.address_id;
+					prop.num_bathrooms = prop.num_bathrooms;
+					prop.num_bedrooms = prop.num_bedrooms;
+					prop.can_mix_tenants = prop.can_mix_tenants;
+					prop.address = a;
+	
+					propertyAddresses.Add (prop);
+				}
+			}
+
+			return propertyAddresses;
+		}
+
+		public void SavePropertyAddress(PropertyAddress propAdd) {
+			var addressId = SaveAddress (propAdd.address);
+			propAdd.address_id = addressId;
+			Property p = new Property ();
+			p.address_id = propAdd.address_id;
+			p.can_mix_tenants = propAdd.can_mix_tenants;
+			p.num_bedrooms = propAdd.num_bedrooms;
+			p.num_bathrooms = propAdd.num_bathrooms;
+			SaveProperty (p);
+		}
+
 		public IEnumerable<Property> GetOwnedNotOccupiedProperties ()
 		{
 			lock (locker) {
