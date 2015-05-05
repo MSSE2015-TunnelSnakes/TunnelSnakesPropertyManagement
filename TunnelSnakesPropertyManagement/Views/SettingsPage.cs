@@ -64,21 +64,29 @@ namespace TunnelSnakesPropertyManagement
 			int addr1Id = dbHelper.SaveAddress (addr1);
 
 			Address addr2 = new Address ();
-			addr2.address_line_1 = "123 Main Street";
-			addr2.address_line_2 = "Appartment #330";
+			addr2.address_line_1 = "456 Elm Street";
+			addr2.address_line_2 = "";
 			addr2.city = "Minneapolis";
 			addr2.state = "MN";
-			addr2.zip = "55410";
+			addr2.zip = "55412";
 
 			int addr2Id = dbHelper.SaveAddress (addr2);
 
 			Property prop1 = new Property ();
-			prop1.address_id = addr2Id;
+			prop1.address_id = addr1Id;
 			prop1.can_mix_tenants = 0;
 			prop1.num_bathrooms = 2;
 			prop1.num_bedrooms = 3;
 
 			int prop1Id = dbHelper.SaveProperty (prop1);
+
+			Property prop2 = new Property ();
+			prop2.address_id = addr2Id;
+			prop2.can_mix_tenants = 0;
+			prop2.num_bathrooms = 5;
+			prop2.num_bedrooms = 5;
+
+			int prop2Id = dbHelper.SaveProperty (prop2);
 
 			Tenant tenant1 = new Tenant ();
 			tenant1.property_id = prop1Id;
@@ -88,8 +96,8 @@ namespace TunnelSnakesPropertyManagement
 			tenant1.email = "banderson@hotmail.com";
 			tenant1.phone_cell = "612-555-1010";
 			tenant1.phone_home = "612-555-4545";
-			tenant1.least_start_date = "4/1/2015";
-			tenant1.least_end_date = "4/1/2016";
+			tenant1.lease_start_date = "4/1/2015";
+			tenant1.lease_end_date = "4/1/2016";
 
 			dbHelper.SaveTenant (tenant1);
 
@@ -101,8 +109,8 @@ namespace TunnelSnakesPropertyManagement
 			tenant2.phone_home = "123-555-2342";
 			tenant2.phone_cell = "123-555-3541";
 			tenant2.email = "JohnUser@Hotmail.com";
-			tenant2.least_start_date = "4/1/2015";
-			tenant2.least_end_date = "4/1/2016";
+			tenant2.lease_start_date = "4/1/2015";
+			tenant2.lease_end_date = "4/1/2016";
 
 			dbHelper.SaveTenant (tenant2);
 		}

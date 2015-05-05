@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TunnelSnakesPropertyManagement", "TunnelSnakesPropertyManagement\TunnelSnakesPropertyManagement.csproj", "{BF9E7C41-2BA0-41F8-A1ED-5EADC95437AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Property Management", "TunnelSnakesPropertyManagement\Property Management.csproj", "{BF9E7C41-2BA0-41F8-A1ED-5EADC95437AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TunnelSnakesPropertyManagement.iOS", "iOS\TunnelSnakesPropertyManagement.iOS.csproj", "{C133787C-761A-49C4-9674-5FC1EF0C2F74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TunnelSnakesPropertyManagement.Droid", "Droid\TunnelSnakesPropertyManagement.Droid.csproj", "{D39E139F-C89E-45D8-9C62-2B48FCA181EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TunnelSnakesPropertyManagment.Droid", "Droid\TunnelSnakesPropertyManagment.Droid.csproj", "{D39E139F-C89E-45D8-9C62-2B48FCA181EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,14 +1,15 @@
-﻿<Properties StartupItem="Droid/TunnelSnakesPropertyManagement.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.133d6536" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TunnelSnakesPropertyManagement/Views/PropertyListCell.cs">
+﻿<Properties StartupItem="Droid/TunnelSnakesPropertyManagment.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_22_x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TunnelSnakesPropertyManagement/Views/PropertyListPage.cs">
     <Files>
-      <File FileName="TunnelSnakesPropertyManagement/Views/PropertyListPage.cs" Line="3" Column="34" />
-      <File FileName="TunnelSnakesPropertyManagement/Views/PropertyPage.cs" Line="19" Column="4" />
-      <File FileName="TunnelSnakesPropertyManagement/TunnelSnakesPropertyManagement.cs" Line="1" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/Views/HomePage.cs" Line="1" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/Database/DatabaseHelper.cs" Line="1" Column="1" />
-      <File FileName="TunnelSnakesPropertyManagement/Views/PropertyListCell.cs" Line="14" Column="4" />
-      <File FileName="TunnelSnakesPropertyManagement/Models/Property.cs" Line="20" Column="30" />
+      <File FileName="TunnelSnakesPropertyManagement/Views/HomePage.cs" Line="77" Column="34" />
+      <File FileName="TunnelSnakesPropertyManagement/Views/PropertyListPage.cs" Line="42" Column="20" />
+      <File FileName="TunnelSnakesPropertyManagement/Database/DatabaseHelper.cs" Line="29" Column="17" />
+      <File FileName="TunnelSnakesPropertyManagement/Models/Property.cs" Line="23" Column="29" />
+      <File FileName="TunnelSnakesPropertyManagement/Views/PropertyListCell.cs" Line="37" Column="44" />
+      <File FileName="TunnelSnakesPropertyManagement/Models/Address.cs" Line="10" Column="31" />
+      <File FileName="TunnelSnakesPropertyManagement/Views/PropertyPage.cs" Line="73" Column="28" />
+      <File FileName="TunnelSnakesPropertyManagement/Views/SettingsPage.cs" Line="97" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

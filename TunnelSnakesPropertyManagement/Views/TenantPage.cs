@@ -74,8 +74,8 @@ namespace TunnelSnakesPropertyManagement
 				tenant.phone_home = homePhone.Text;
 				tenant.phone_cell = cellPhone.Text;
 				tenant.email = email.Text;
-				tenant.least_start_date = leaseStartDate.Text;
-				tenant.least_end_date = leaseEndDate.Text;
+				tenant.lease_start_date = leaseStartDate.Text;
+				tenant.lease_end_date = leaseEndDate.Text;
 
 				DatabaseHelper dbHelper = new DatabaseHelper();
 				dbHelper.SaveTenant(tenant);

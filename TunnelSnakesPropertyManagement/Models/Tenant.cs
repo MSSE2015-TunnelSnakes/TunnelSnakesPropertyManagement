@@ -14,8 +14,8 @@ namespace TunnelSnakesPropertyManagement
 		public string phone_home { get; set; }
 		public string phone_cell { get; set; }
 		public string email { get; set; }
-		public string least_start_date { get; set; }
-		public string least_end_date { get; set; }
+		public string lease_start_date { get; set; }
+		public string lease_end_date { get; set; }
 
 		public Tenant ()
 		{

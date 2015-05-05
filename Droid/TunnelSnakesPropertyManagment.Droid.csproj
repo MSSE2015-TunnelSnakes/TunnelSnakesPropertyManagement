@@ -65,9 +65,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TunnelSnakesPropertyManagement\TunnelSnakesPropertyManagement.csproj">
+    <ProjectReference Include="..\TunnelSnakesPropertyManagement\Property Management.csproj">
       <Project>{BF9E7C41-2BA0-41F8-A1ED-5EADC95437AE}</Project>
-      <Name>TunnelSnakesPropertyManagement</Name>
+      <Name>Property Management</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

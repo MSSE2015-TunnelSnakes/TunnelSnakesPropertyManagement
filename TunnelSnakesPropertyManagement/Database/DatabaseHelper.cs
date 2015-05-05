@@ -68,7 +68,8 @@ namespace TunnelSnakesPropertyManagement
 					database.Update(address);
 					return address.address_id;
 				} else {
-					return database.Insert(address);
+					database.Insert (address);
+					return address.address_id;
 				}
 			}
 		}
