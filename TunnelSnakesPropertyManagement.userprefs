@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="TunnelSnakesPropertyManagement\Property Management.csproj">
+﻿<Properties StartupItem="Droid/TunnelSnakesPropertyManagment.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,4 +1,3 @@
-<<<<<<< Upstream, based on origin/master
 ﻿using System;
 using SQLite.Net;
 using System.Collections.Generic;
@@ -79,6 +78,13 @@ namespace TunnelSnakesPropertyManagement
 		{
 			lock (locker) {
 				return database.Delete<Address>(id);
+			}
+		}
+
+		public IEnumerable<Address> GetAddresses ()
+		{
+			lock (locker) {
+				return (from i in database.Table<Address>() select i).ToList();
 			}
 		}
 
@@ -244,7 +250,7 @@ namespace TunnelSnakesPropertyManagement
 	}
 }
 
-=======
+/*
 ﻿using System;
 using SQLite.Net;
 using System.Collections.Generic;
@@ -446,5 +452,4 @@ namespace TunnelSnakesPropertyManagement
 		}
 	}
 }
-
->>>>>>> 30f05e0 payments kind of work, they are super ugly and no validation - eit does not work
+*/
