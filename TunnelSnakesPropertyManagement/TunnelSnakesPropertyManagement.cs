@@ -1,4 +1,3 @@
-<<<<<<< Upstream, based on origin/master
 ﻿using System;
 using Xamarin.Forms;
 using System.Diagnostics;
@@ -40,7 +39,7 @@ namespace TunnelSnakesPropertyManagement
 			}
 		}
 	}
-=======
+/*
 ﻿using System;
 using Xamarin.Forms;
 using System.Diagnostics;
@@ -124,5 +123,5 @@ namespace TunnelSnakesPropertyManagement
 			int tenant1Id = Database.SaveTenant (tenant1);
 		}
 	}
->>>>>>> 30f05e0 payments kind of work, they are super ugly and no validation - eit does not work
+*/
 }

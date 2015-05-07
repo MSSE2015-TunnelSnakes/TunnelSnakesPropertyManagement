@@ -9,21 +9,21 @@ namespace TunnelSnakesPropertyManagement
 	{
 		Button deleteButton;
 		Payment payment = null;
-		Dictionary<string, int> properties;
-		Dictionary<string, int> tenants;
-		Picker property;
 		Picker tenant;
+		Picker property;
+		Dictionary<string, int> tenants;
+		Dictionary<string, int> addresses;
+		Dictionary<string, int> properties;
 
 		public PaymentPage ()
 		{
 			var db = new DatabaseHelper ();
 			Title = "Payment";
-			var isExisting = payment != null && payment.payment_id != null && payment.payment_id > 0;
 
-			var addresses = db.GetAddresses ().ToDictionary (x => x.address_id, y => y.address_id + ". " + y.address_line_1 + " " + y.address_line_2);
+			addresses = db.GetAddresses ().ToDictionary (x => x.address_id, y => y.AddressString);
 			if (!addresses.Any ())
 				throw new ArgumentException ("can't make a payment without an address");
-			
+
 			var props = db.GetProperties ();
 			properties = new Dictionary<string, int> ();
 			foreach(var prop in props)
@@ -31,10 +31,10 @@ namespace TunnelSnakesPropertyManagement
 				if (!properties.ContainsKey (addresses [prop.address_id]))
 					properties.Add (addresses [prop.address_id], prop.property_id);
 			}
-			//var properties = props.ToDictionary (x => addresses[x.address_id], y => y.property_id);
+
 			if (!properties.Any ())
 				throw new ArgumentException ("can't make a payment without a property");
-			
+
 			property = new Picker { Title = "Property", VerticalOptions = LayoutOptions.Start };
 
 			foreach (string address in properties.Keys)
@@ -49,7 +49,8 @@ namespace TunnelSnakesPropertyManagement
 				propertyId = properties[addressLine];
 			};
 
-			tenants = db.GetAllTenants ().ToDictionary (x => x.tenant_id + ". " + x.first_name + " " + x.last_name, x => x.tenant_id);
+
+			tenants = db.GetAllTenants ().ToDictionary (x => x.Name, x => x.tenant_id);
 			if(!tenants.Any()) 
 				throw new ArgumentException ("can't make a payment without a tenant");
 
@@ -74,6 +75,9 @@ namespace TunnelSnakesPropertyManagement
 			};
 			dueDate.SetBinding (DatePicker.DateProperty, "due_date");
 
+			var amountDueLabel = new Label {
+				Text = "Amount Due"
+			};
 			Entry amountDue = new Entry
 			{
 				Placeholder = "Amount Due",
@@ -81,6 +85,9 @@ namespace TunnelSnakesPropertyManagement
 			};
 			amountDue.SetBinding (Entry.TextProperty, "amount_due");
 
+			var amountPaidLabel = new Label {
+				Text = "Amount Paid"
+			};
 			Entry amountPaid = new Entry
 			{
 				Placeholder = "Amount Paid",
@@ -98,8 +105,12 @@ namespace TunnelSnakesPropertyManagement
 				payment.property_id = propertyId;
 				payment.tenant_id = tenantId;
 				payment.due_date = dueDate.Date;
-				payment.amount_due = Convert.ToDecimal(amountDue.Text);
-				payment.amount_paid = Convert.ToDecimal(amountPaid.Text);
+
+				try { payment.amount_due = Convert.ToDecimal(amountDue.Text);
+				} catch(Exception ex) { payment.amount_due = 0M; }
+
+				try { payment.amount_paid = Convert.ToDecimal(amountPaid.Text); 
+				} catch(Exception ex) { payment.amount_paid = 0M; }
 
 				DatabaseHelper dbHelper = new DatabaseHelper();
 				var id = dbHelper.SavePayment(payment);
@@ -123,35 +134,32 @@ namespace TunnelSnakesPropertyManagement
 					property,
 					tenant,
 					dueDate,
+					amountDueLabel,
 					amountDue,
+					amountPaidLabel,
 					amountPaid,
 					saveButton,
 					deleteButton
 				}
-			};
+				};
 		}
-		 
 
 		protected override void OnAppearing()
 		{            
 			base.OnAppearing();
 
 			payment = BindingContext as Payment;
-			var isExisting = true;
 			if (payment == null || payment.payment_id <= 0) {
 				if (deleteButton != null) {
 					deleteButton.IsVisible = false;
 				}
-				isExisting = false;
-			}
+			} else {
 
-			if (isExisting) {
-				var addressString = properties.First (x => x.Value == payment.property_id).Key;
-				property.SelectedIndex = property.Items.IndexOf (addressString);
-			}
+				var propertyString = properties.First (x => x.Value == payment.property_id).Key;
+				property.SelectedIndex = property.Items.IndexOf (propertyString);
 
-			if (isExisting) {
-				tenant.SelectedIndex = tenant.Items.IndexOf (tenants.First (x => x.Value == payment.tenant_id).Key); 
+				var tenantString = tenants.First (x => x.Value == payment.tenant_id).Key;
+				tenant.SelectedIndex = tenant.Items.IndexOf (tenantString);
 			}
 		}
 	}
