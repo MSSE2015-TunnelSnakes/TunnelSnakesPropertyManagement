@@ -29,12 +29,12 @@ namespace TunnelSnakesPropertyManagement
 
 			listView.ItemsSource = payments;
 			listView.ItemTemplate = new DataTemplate(typeof(PaymentListCell));
-//			listView.ItemSelected += (sender, e) => {
-//				var property = (Payment)e.SelectedItem;
-//				var propertyPage = new PropertyPage();
-//				propertyPage.BindingContext = property;
-//				Navigation.PushAsync(propertyPage);
-//			};
+			listView.ItemSelected += (sender, e) => {
+				var payment = (Payment)e.SelectedItem;
+				var paymentPage = new PaymentPage();
+				paymentPage.BindingContext = payment;
+				Navigation.PushAsync(paymentPage);
+			};
 
 			layout.Children.Add(listView);
 			int counter = payments.Count();
@@ -46,18 +46,17 @@ namespace TunnelSnakesPropertyManagement
 			layout.Children.Add (temp);
 			// END Payments
 
-
-			Button addNewProperty = new Button
+			Button addNewPayment = new Button
 			{
 				Text = String.Format("Add New Payment")
 			};
-//			addNewProperty.Clicked += (sender, args) =>
-//			{
-//				PropertyPage propertyPage = new PropertyPage();
-//				this.Navigation.PushAsync(propertyPage);
-//			};
+			addNewPayment.Clicked += (sender, args) =>
+			{
+				PaymentPage paymentPage = new PaymentPage();
+				this.Navigation.PushAsync(paymentPage);
+			};
 
-			layout.Children.Add(addNewProperty);
+			layout.Children.Add(addNewPayment);
 
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
 			Content = layout;

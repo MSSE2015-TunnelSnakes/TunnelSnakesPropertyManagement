@@ -7,39 +7,26 @@ namespace TunnelSnakesPropertyManagement
 	{
 		public PaymentListCell ()
 		{
-			var firstNameLabel = new Label {
-				YAlign = TextAlignment.Center
-			};
-			firstNameLabel.SetBinding (Label.TextProperty, "first_name");
-
-			var lastNameLabel = new Label {
-				YAlign = TextAlignment.Center
-			};
-			lastNameLabel.SetBinding (Label.TextProperty, "last_name");
-
 			var dueDateLabel = new Label {
 				YAlign = TextAlignment.Center
 			};
 			dueDateLabel.SetBinding (Label.TextProperty, "due_date");
 
-			var isPaidLabel = new Label {
-				YAlign = TextAlignment.Center
-			};
-//			isPaidLabel.VerticalOptions.Alignment = LayoutAlignment.End;
-//			isPaidLabel.HorizontalOptions.Alignment = LayoutAlignment.End;
-			isPaidLabel.SetBinding (Label.TextProperty, "is_paid");
 
-			var amountLabel = new Label {
-				YAlign = TextAlignment.Center
+			var dollarLabel = new Label {
+				Text = "$",
+				YAlign = TextAlignment.End
 			};
-			//amountLabel.HorizontalOptions.Alignment = LayoutAlignment.End;
-			amountLabel.SetBinding (Label.TextProperty, "amount");
+			var amountDueLabel = new Label {
+				YAlign = TextAlignment.End
+			};
+			amountDueLabel.SetBinding (Label.TextProperty, "amount_due");
 
 			var layout = new StackLayout {
-				Padding = new Thickness(40, 0, 0, 0),
+				Padding = new Thickness(20, 0, 0, 0),
 				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.StartAndExpand,
-				Children = {firstNameLabel,  lastNameLabel}
+				Children = { dueDateLabel, dollarLabel, amountDueLabel }
 			};
 			View = layout;
 		}
