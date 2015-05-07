@@ -228,10 +228,7 @@ namespace TunnelSnakesPropertyManagement
 				var tenants = database.Table<Tenant> ().Where (x => tenantIds.Contains (x.tenant_id))
 					.ToDictionary(x => x.tenant_id, x => x.Name.Substring(x.Name.IndexOf(' '), x.Name.Length - x.Name.IndexOf(' ')));
 
-				foreach(var p in payments)
-				{
-					p.TenantName = tenants [p.tenant_id];
-				}
+				foreach(var p in payments) { p.TenantName = tenants [p.tenant_id]; }
 
 				return payments;
 			}
