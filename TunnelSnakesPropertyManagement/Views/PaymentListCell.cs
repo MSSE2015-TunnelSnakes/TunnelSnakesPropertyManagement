@@ -7,26 +7,26 @@ namespace TunnelSnakesPropertyManagement
 	{
 		public PaymentListCell ()
 		{
+			var tenantLabel = new Label {
+			};
+			tenantLabel.SetBinding (Label.TextProperty, "TenantName");
 			var dueDateLabel = new Label {
 				YAlign = TextAlignment.Center
 			};
-			dueDateLabel.SetBinding (Label.TextProperty, "due_date");
 
+			dueDateLabel.SetBinding (Label.TextProperty, "DueDateString");
 
-			var dollarLabel = new Label {
-				Text = "$",
-				YAlign = TextAlignment.End
-			};
 			var amountDueLabel = new Label {
-				YAlign = TextAlignment.End
+				YAlign = TextAlignment.End,
+				XAlign = TextAlignment.End					
 			};
-			amountDueLabel.SetBinding (Label.TextProperty, "amount_due");
+			amountDueLabel.SetBinding (Label.TextProperty, "PaymentDueString");
 
 			var layout = new StackLayout {
 				Padding = new Thickness(20, 0, 0, 0),
 				Orientation = StackOrientation.Horizontal,
 				HorizontalOptions = LayoutOptions.StartAndExpand,
-				Children = { dueDateLabel, dollarLabel, amountDueLabel }
+				Children = { tenantLabel, dueDateLabel, amountDueLabel }
 			};
 			View = layout;
 		}

@@ -13,6 +13,14 @@ namespace TunnelSnakesPropertyManagement
 		public string state { get; set; }
 		public string zip { get; set; }
 
+		public string AddressString
+		{
+			get
+			{
+				return address_id + ". " + address_line_1 + " " + address_line_2;
+			}
+		}
+
 		public Address ()
 		{
 		}

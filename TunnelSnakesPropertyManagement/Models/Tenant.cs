@@ -17,6 +17,15 @@ namespace TunnelSnakesPropertyManagement
 		public string lease_start_date { get; set; }
 		public string lease_end_date { get; set; }
 
+		[Ignore]
+		public string Name
+		{
+			get 
+			{
+				return tenant_id + ". " + first_name + " " + last_name;
+			}
+		}
+
 		public Tenant ()
 		{
 		}

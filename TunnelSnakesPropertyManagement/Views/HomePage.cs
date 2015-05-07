@@ -29,11 +29,10 @@ namespace TunnelSnakesPropertyManagement
 
 			Button viewPayments = new Button
 			{
-				Text = String.Format("View Payment Calendar")
+				Text = String.Format("View Payments")
 			};
 			viewPayments.Clicked += (sender, args) =>
 			{
-				//viewPayments.Text = String.Format("{0} click{1}!", count, count == 1 ? "" : "s");
 				PaymentListPage paymentListPage = new PaymentListPage();
 				this.Navigation.PushAsync(paymentListPage);
 			};
@@ -47,7 +46,6 @@ namespace TunnelSnakesPropertyManagement
 			{
 				PropertyListPage propertyListPage = new PropertyListPage();
 				this.Navigation.PushAsync(propertyListPage);
-
 			};
 
 
@@ -57,7 +55,7 @@ namespace TunnelSnakesPropertyManagement
 			};
 			messageTenants.Clicked += (sender, args) =>
 			{
-				messageTenants.Text = String.Format("{0} click{1}!", count, count == 1 ? "" : "s");
+				messageTenants.Text = "Not Yet Implemented";//String.Format("{0} click{1}!", count, count == 1 ? "" : "s");
 			};
 
 			Button settings = new Button

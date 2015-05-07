@@ -12,7 +12,7 @@ namespace TunnelSnakesPropertyManagement
 		Picker tenant;
 		Picker property;
 		Dictionary<string, int> tenants;
-		Dictionary<string, int> addresses;
+		Dictionary<int, string> addresses;
 		Dictionary<string, int> properties;
 
 		public PaymentPage ()
