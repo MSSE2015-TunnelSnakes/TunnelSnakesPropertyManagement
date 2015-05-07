@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="Droid\TunnelSnakesPropertyManagment.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.TA431073BR" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TunnelSnakesPropertyManagement\Views\PaymentListPage.cs">
+    <Files>
+      <File FileName="TunnelSnakesPropertyManagement\Views\HomePage.cs" Line="77" Column="34" />
+      <File FileName="TunnelSnakesPropertyManagement\Views\PropertyListPage.cs" Line="41" Column="34" />
+      <File FileName="TunnelSnakesPropertyManagement\Database\DatabaseHelper.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\Models\Property.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\Views\PropertyListCell.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\Models\Address.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\Views\PropertyPage.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\Views\SettingsPage.cs" Line="1" Column="1" />
+      <File FileName="TunnelSnakesPropertyManagement\Views\PaymentListPage.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
