@@ -56,12 +56,12 @@ namespace TunnelSnakesPropertyManagement
 			var numBathrooms = new Entry { Placeholder = "Bathrooms", StyleId = "UserId" };
 			numBathrooms.SetBinding (Entry.TextProperty, "num_bathrooms");
 
-			var canMixTenantsLabel = new Label {
-				Text = "Can Mix Tenants?"
-			};
+			//var canMixTenantsLabel = new Label {
+			//	Text = "Can Mix Tenants?"
+			//};
 
-			var canMixTenants = new Entry { Placeholder = "Mix Tenants", StyleId = "UserId" };
-			canMixTenants.SetBinding (Entry.TextProperty, "can_mix_tenants");
+			//var canMixTenants = new Entry { Placeholder = "Mix Tenants", StyleId = "UserId" };
+			//canMixTenants.SetBinding (Entry.TextProperty, "can_mix_tenants");
 
 			//BindingContext = Model;
 
@@ -84,9 +84,27 @@ namespace TunnelSnakesPropertyManagement
 				propertyAddress.address.zip = zip.Text;
 
 				propertyAddress.address_id = propertyAddress.address_id;
-				propertyAddress.num_bathrooms =  Convert.ToInt32(numBathrooms.Text);
-				propertyAddress.num_bedrooms =  Convert.ToInt32(numBedrooms.Text);
-				propertyAddress.can_mix_tenants =  Convert.ToInt32(canMixTenants.Text);
+
+				int intOut = 0;
+				if(Int32.TryParse(numBathrooms.Text, out intOut))
+				{
+					propertyAddress.num_bathrooms = intOut;
+				} else {
+					propertyAddress.num_bathrooms = 0;
+				}
+
+				if(Int32.TryParse(numBedrooms.Text, out intOut))
+				{
+					propertyAddress.num_bedrooms = intOut;
+				} else {
+					propertyAddress.num_bedrooms = 0;
+				}
+
+				//propertyAddress.can_mix_tenants = Convert.ToInt32(canMixTenants.Text);
+
+				//propertyAddress.num_bathrooms = Convert.ToInt32(numBathrooms.Text);
+				//propertyAddress.num_bedrooms = Convert.ToInt32(numBedrooms.Text);
+				//propertyAddress.can_mix_tenants = Convert.ToInt32(canMixTenants.Text);
 
 				DatabaseHelper dbHelper = new DatabaseHelper();
 				dbHelper.SavePropertyAddress(propertyAddress);
@@ -119,8 +137,8 @@ namespace TunnelSnakesPropertyManagement
 			grid.Children.Add (numBedrooms, 1, 5);
 			grid.Children.Add (numBathroomsLabel, 0, 6);
 			grid.Children.Add (numBathrooms, 1, 6);
-			grid.Children.Add (canMixTenantsLabel, 0, 7);
-			grid.Children.Add (canMixTenants, 1, 7);
+			//grid.Children.Add (canMixTenantsLabel, 0, 7);
+			//grid.Children.Add (canMixTenants, 1, 7);
 
 			Content = new StackLayout () {
 				VerticalOptions = LayoutOptions.Center,

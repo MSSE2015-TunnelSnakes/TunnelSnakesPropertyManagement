@@ -108,17 +108,18 @@ namespace TunnelSnakesPropertyManagement
 
 			lock (locker) {
 				IEnumerable<Property> properties = GetProperties ();
-
+				var addressIds = properties.Select (x => x.address_id).Distinct ();
+				var addresses = GetAddresses ().Where (x => addressIds.Contains (x.address_id)).Distinct ()
+					.ToDictionary (x => x.address_id, x => x);
+				
 				foreach (Property p in properties) {
-					Address a = GetAddress (p.address_id);
-					//  Not allowed?
-					//PropertyAddress propAdd = (PropertyAddress)p;
 					PropertyAddress prop = new PropertyAddress();
+					prop.property_id = p.property_id;
 					prop.address_id = p.address_id;
-					prop.num_bathrooms = prop.num_bathrooms;
-					prop.num_bedrooms = prop.num_bedrooms;
-					prop.can_mix_tenants = prop.can_mix_tenants;
-					prop.address = a;
+					prop.num_bathrooms = p.num_bathrooms;
+					prop.num_bedrooms = p.num_bedrooms;
+					prop.can_mix_tenants = p.can_mix_tenants;
+					prop.address = addresses[p.address_id];
 
 					propertyAddresses.Add (prop);
 				}
@@ -131,6 +132,7 @@ namespace TunnelSnakesPropertyManagement
 			var addressId = SaveAddress (propAdd.address);
 			propAdd.address_id = addressId;
 			Property p = new Property ();
+			p.property_id = propAdd.property_id;
 			p.address_id = propAdd.address_id;
 			p.can_mix_tenants = propAdd.can_mix_tenants;
 			p.num_bedrooms = propAdd.num_bedrooms;
